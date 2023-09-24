@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+
+export const overlayContext = createContext(null);
 
 const Root = () => {
   const [overlayImg, setOverlayImg] = useState([true]);
@@ -71,7 +73,9 @@ const Root = () => {
           </div>
         </div>
       </div>
-      <Outlet> </Outlet>
+      <overlayContext.Provider value={setOverlayImg}>
+        <Outlet></Outlet>
+      </overlayContext.Provider>
     </>
   );
 };
