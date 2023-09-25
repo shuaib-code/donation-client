@@ -21,7 +21,7 @@ const Root = () => {
             </div>
             <div className="flex justify-center gap-12">
               <NavLink
-                to="/home"
+                to="/"
                 className={({ isActive }) =>
                   isActive ? "text-custom-color-1" : ""
                 }

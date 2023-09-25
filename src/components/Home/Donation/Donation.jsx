@@ -44,8 +44,8 @@ const Donation = () => {
       </div>
       <div className={`flex items-center justify-center my-12 ${hidden}`}>
         <h1 className="text-2xl font-semibold text-black">
-          You have not donated yet. Go to{" "}
-          <Link to="/home">
+          You have not donated yet. Go to
+          <Link to="/">
             <span className="text-[#ff4747] font-medium underline"> Home </span>
           </Link>
           to donate.
