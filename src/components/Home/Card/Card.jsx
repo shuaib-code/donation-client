@@ -8,7 +8,7 @@ const Card = ({ card }) => {
   const catBg = { backgroundColor: bgCat };
   const handleOverlay = useContext(overlayContext);
   return (
-    <Link to={`/donation/${id}`}>
+    <Link to={`/donate/${id}`}>
       <div onClick={() => handleOverlay(false)}>
         <img className="w-full" src={img} alt={title} />
         <div className="p-2 rounded-b-lg" style={cardBg}>

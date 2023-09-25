@@ -6,6 +6,8 @@ import Root from "./Root";
 import Home from "./components/Home/Home";
 import Donate from "./components/Home/Donate/Donate";
 import Donation from "./components/Home/Donation/Donation";
+import { Statistics } from "./components/Statistics/Statistics";
+import { getData } from "./assets/Local";
 
 const rounter = createBrowserRouter([
   {
@@ -17,7 +19,7 @@ const rounter = createBrowserRouter([
         element: <Home></Home>,
       },
       {
-        path: "/donation/:id",
+        path: "/donate/:id",
         loader: () => fetch("donation.json"),
         element: <Donate></Donate>,
       },
@@ -28,7 +30,7 @@ const rounter = createBrowserRouter([
       },
       {
         path: "/statistics",
-        element: <div>statistics</div>,
+        element: <Statistics></Statistics>,
       },
     ],
   },
