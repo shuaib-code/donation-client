@@ -22,7 +22,6 @@ const Result = () => {
       </div>
       <div className={`flex items-center justify-center my-12 ${hidden}`}>
         <h1 className="text-2xl font-semibold text-black">
-          {" "}
           <span className="text-[#ff4747]">{catagory}</span> not Found
         </h1>
       </div>

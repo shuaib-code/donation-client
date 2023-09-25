@@ -9,11 +9,13 @@ import Donation from "./components/Home/Donation/Donation";
 import { Statistics } from "./components/Statistics/Statistics";
 import { getData } from "./assets/Local";
 import Result from "./components/Search/Result";
+import Error from "./components/Error/Error";
 
 const rounter = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/home",

@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { getData } from "../../../assets/Local";
 import { useEffect, useState } from "react";
 import DonateCard from "./DonateCard";
@@ -8,8 +8,10 @@ const Donation = () => {
   const [storeItem, setStoreItem] = useState([]);
   const [btn, setBtn] = useState("hidden");
   const [slice, setSlice] = useState(4);
+  const [hidden, setHidden] = useState("inline-block");
   useEffect(() => {
     const localId = getData();
+    setHidden(localId[0] ? "hidden" : "inline-block");
     if (itemList) {
       const donated = itemList.filter((e) => localId.includes(e.id));
       setStoreItem(donated);
@@ -39,6 +41,15 @@ const Donation = () => {
         >
           See All
         </button>
+      </div>
+      <div className={`flex items-center justify-center my-12 ${hidden}`}>
+        <h1 className="text-2xl font-semibold text-black">
+          You have not donated yet. Go to{" "}
+          <Link to="/home">
+            <span className="text-[#ff4747] font-medium underline"> Home </span>
+          </Link>
+          to donate.
+        </h1>
       </div>
     </>
   );
