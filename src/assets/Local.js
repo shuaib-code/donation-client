@@ -6,10 +6,11 @@ const getData = ()=>{
     
 }
 const setData = (id, title) =>{
+    const intId = parseInt(id);
     const localData = getData();
-    const localDataCheck = localData.find(e=>id==e);
+    const localDataCheck = localData.find(e=>intId===e);
     if(!localDataCheck){
-        const newData = [...localData, id];
+        const newData = [...localData, intId];
         localStorage.setItem('donate', JSON.stringify(newData));
         toast.success(`Your donation for ${title} is succesfull.`)
     }else{toast.error(`You have already donated for ${title}`)}

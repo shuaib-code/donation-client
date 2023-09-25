@@ -5,6 +5,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
 import Home from "./components/Home/Home";
 import Donate from "./components/Home/Donate/Donate";
+import Donation from "./components/Home/Donation/Donation";
 
 const rounter = createBrowserRouter([
   {
@@ -22,7 +23,8 @@ const rounter = createBrowserRouter([
       },
       {
         path: "/donation",
-        element: <div>donation</div>,
+        loader: () => fetch("donation.json"),
+        element: <Donation></Donation>,
       },
       {
         path: "/statistics",
