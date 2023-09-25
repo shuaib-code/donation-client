@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import Search from "./components/Search/Search";
 
 export const overlayContext = createContext(null);
 
@@ -48,29 +49,10 @@ const Root = () => {
               </NavLink>
             </div>
           </div>
-          <div
-            className={`py-32 flex justify-center items-center ${
-              overlayImg || "hidden"
-            }`}
-          >
-            <div>
-              <h1 className="font-bold text-5xl mb-10">
-                I Grow By Helping People In Need
-              </h1>
-              <div className="flex justify-center items-center">
-                <div>
-                  <input
-                    type="text"
-                    className="text-sm font-normal p-4 rounded-l-lg border-y-2 border-[#DEDEDE] text-[#DEDEDE] border-l-2"
-                    placeholder="Search here...."
-                  />
-                  <button className="text-base font-medium bg-custom-color-1 text-[white] py-4 px-7 rounded-r-lg">
-                    Search
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Search
+            overlayImg={overlayImg}
+            setOverlayImg={setOverlayImg}
+          ></Search>
         </div>
       </div>
       <overlayContext.Provider value={setOverlayImg}>
